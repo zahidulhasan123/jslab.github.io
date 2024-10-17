@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Event Examples</title>
+  <style>
+    #demo, #mouseText, #mouseText2, #output, #keyOutput, #loadMessage {
+      margin: 20px 0;
+    }
+  </style>
+  <script>
+    // Function for 'onchange' event
+    function displayChange() {
+      let inputText = document.getElementById('myInput').value;
+      document.getElementById('output').innerHTML = "You entered: " + inputText;
+    }
+
+    // Function for 'onclick' event
+    function changeText() {
+      document.getElementById('demo').innerHTML = "Button clicked! Text changed.";
+    }
+
+    // Function for 'onmouseover' event
+    function mouseOver() {
+      document.getElementById('mouseText').innerHTML = "You hovered over the text!";
+    }
+
+    // Function for 'onmouseout' event
+    function mouseOut() {
+      document.getElementById('mouseText2').innerHTML = "Mouse left the text!";
+    }
+
+    // Function for 'onkeydown' event
+    function keyPress() {
+      document.getElementById('keyOutput').innerHTML = "Key was pressed!";
+    }
+
+    // Function for 'onload' event
+    function pageLoad() {
+      document.getElementById('loadMessage').innerHTML = "Page has fully loaded!";
+    }
+  </script>
+</head>
+<body onload="pageLoad()">
+
+  <h2>HTML Events Examples</h2>
+
+  <!-- 'onchange' example -->
+  <h3>onchange Example</h3>
+  <input type="text" id="myInput" onchange="displayChange()">
+  <p id="output">Type something in the input box above and see it change here!</p>
+
+  <!-- 'onclick' example -->
+  <h3>onclick Example</h3>
+  <button onclick="changeText()">Click me</button>
+  <p id="demo">I will change when you click the button!</p>
+
+  <!-- 'onmouseover' example -->
+  <h3>onmouseover Example</h3>
+  <p id="mouseText" onmouseover="mouseOver()">Hover over this text.</p>
+
+  <!-- 'onmouseout' example -->
+  <h3>onmouseout Example</h3>
+  <p id="mouseText2" onmouseout="mouseOut()">Move the mouse away from this text.</p>
+
+  <!-- 'onkeydown' example -->
+  <h3>onkeydown Example</h3>
+  <input type="text" onkeydown="keyPress()">
+  <p id="keyOutput">Press a key to see a message!</p>
+
+  <!-- 'onload' example -->
+  <h3>onload Example</h3>
+  <p id="loadMessage">The page is still loading...</p>
+
+</body>
+</html>
